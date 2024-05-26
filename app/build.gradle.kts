@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-
 }
 
 android {
@@ -12,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.ganeshrashinkar.newsapplicationwithmvvm"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -34,6 +33,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures{
+        viewBinding=true
     }
 }
 
@@ -72,9 +74,9 @@ dependencies {
             implementation ( "com.squareup.okhttp3:logging-interceptor:4.5.0")
 
     // Navigation Components
-            implementation ( "androidx.navigation:navigation-fragment-ktx:2.2.1")
-            implementation ( "androidx.navigation:navigation-ui-ktx:2.2.1")
-
+    implementation ("androidx.navigation:navigation-fragment:2.6.0")
+    implementation ("androidx.navigation:navigation-ui:2.6.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
     // Glide
             implementation ("com.github.bumptech.glide:glide:4.11.0")
     kapt( "com.github.bumptech.glide:compiler:4.11.0")}
