@@ -1,6 +1,6 @@
 package com.ganeshrashinkar.newsapplicationwithmvvm.api
 
-import com.ganeshrashinkar.newsapplicationwithmvvm.NewsResponse
+import com.ganeshrashinkar.newsapplicationwithmvvm.models.NewsResponse
 import com.ganeshrashinkar.newsapplicationwithmvvm.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET

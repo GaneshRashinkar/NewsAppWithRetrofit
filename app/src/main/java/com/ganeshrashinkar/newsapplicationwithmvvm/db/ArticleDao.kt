@@ -9,11 +9,11 @@ import androidx.room.Query
 import com.ganeshrashinkar.newsapplicationwithmvvm.Article
 
 @Dao
-interface ArticleDao {
+ interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsert(article:Article):Long
+     suspend fun upsert(article: Article) : Long
     @Query("select * from articles")
     fun getAllArticles():LiveData<List<Article>>
     @Delete
-    suspend fun delete(article: Article)
+     suspend fun deleteArticle(article: Article):Int
 }
