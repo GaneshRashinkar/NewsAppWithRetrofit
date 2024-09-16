@@ -1,7 +1,7 @@
 package com.ganeshrashinkar.newsapplicationwithmvvm.db
 
 import androidx.room.TypeConverter
-import com.ganeshrashinkar.newsapplicationwithmvvm.models.Source
+import com.ganeshrashinkar.newsapplicationwithmvvm.Source
 
 
 class Converters {
