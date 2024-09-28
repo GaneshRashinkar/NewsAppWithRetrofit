@@ -15,7 +15,7 @@ import com.ganeshrashinkar.newsapplicationwithmvvm.databinding.ActivityNewsBindi
 
 class NewsActivity : FragmentActivity() {
     lateinit var mBinding:ActivityNewsBinding
-     val viewModel:NewsViewmodel by viewModels { NewsViewmodelProviderFactory((application as ApplicationClass).repository) }
+     val viewModel:NewsViewmodel by viewModels { NewsViewmodelProviderFactory(application,(application as ApplicationClass).repository) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding= ActivityNewsBinding.inflate(layoutInflater)

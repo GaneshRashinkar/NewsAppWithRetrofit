@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -66,7 +67,7 @@ val TAG="myTag"
                 is Resource.Error->{
                    hideProgressBar()
                     response.message?.let {message->
-                        Log.e(TAG,"An error occured: $message")
+                        Toast.makeText(activity, "An Error Occured: $message", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is Resource.Loading->{
