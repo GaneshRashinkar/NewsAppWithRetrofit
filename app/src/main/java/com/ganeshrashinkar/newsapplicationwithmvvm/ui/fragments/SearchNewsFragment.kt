@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ganeshrashinkar.newsapplicationwithmvvm.Adapters.NewsAdapter
 import com.ganeshrashinkar.newsapplicationwithmvvm.R
 import com.ganeshrashinkar.newsapplicationwithmvvm.databinding.FragmentSearchNewsBinding
+import com.ganeshrashinkar.newsapplicationwithmvvm.models.NewsResponse
 import com.ganeshrashinkar.newsapplicationwithmvvm.ui.NewsActivity
 import com.ganeshrashinkar.newsapplicationwithmvvm.ui.NewsViewmodel
 import com.ganeshrashinkar.newsapplicationwithmvvm.util.Constants
@@ -48,6 +49,12 @@ class SearchNewsFragment: Fragment(R.layout.fragment_search_news) {
             job?.cancel()
             job= MainScope().launch {
                 delay(Constants.SEARCH_NEWS_DELAY)
+                //Ganesh: Every time clear data when search text is changed
+                viewModel.searchNewsResponse?.articles?.clear()
+                viewModel.searchNewsResponse?.let {
+                    viewModel.searchNews.postValue(Resource.Success(it))
+                }
+
                 editable?.let {
                     if(it.toString().isNotEmpty()){
                         viewModel.searchNews(it.toString())
